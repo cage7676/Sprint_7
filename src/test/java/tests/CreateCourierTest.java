@@ -1,16 +1,27 @@
 package tests;
 
-import Clients.CourierClient;
+import clients.CourierClient;
+import clients.OrderClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.example.pojo.CourierLogin;
 import org.example.pojo.CourierRegister;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 public class CreateCourierTest {
 
-        CourierRegister courier = new CourierRegister("Paul767611>", "qwerty111999", "PaulAlex");
+    CourierClient courierClient;
+    String courierId;
+
+        CourierRegister courier = new CourierRegister("Paul767613>", "qwerty111999", "PaulAlex");
+
+    @After
+    public void tearDown(){
+        courierClient.deleteCourier(courierId);
+    }
 
     @Test
     @DisplayName("Создание нового курьера, валидные данные")
@@ -21,10 +32,7 @@ public class CreateCourierTest {
         CourierLogin courierLogin = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
-        String courierId = CourierClient.getCourierId(logInResponse);
-
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
+        courierId = CourierClient.getCourierId(logInResponse);
     }
 
 
@@ -67,10 +75,8 @@ public class CreateCourierTest {
         CourierLogin courierLogin = new CourierLogin(login, password);
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
-        String courierId = CourierClient.getCourierId(logInResponse);
+        courierId = CourierClient.getCourierId(logInResponse);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
     @Test
@@ -90,12 +96,12 @@ public class CreateCourierTest {
         Response secondResponse = CourierClient.createNewCourier(this.courier);
         CourierClient.comparingOfTheErroneousResponseCodeWithTheActualOne(secondResponse, 409, "Этот логин уже используется. Попробуйте другой.");
 
-        CourierLogin courierLogin = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
-        Response logInResponse = CourierClient.loginCourier(courierLogin);
+          CourierLogin courierLogin = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
+          Response logInResponse = CourierClient.loginCourier(courierLogin);
 
-        String courierId = CourierClient.getCourierId(logInResponse);
+        courierId = CourierClient.getCourierId(logInResponse);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
+
+
 }

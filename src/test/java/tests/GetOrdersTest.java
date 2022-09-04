@@ -1,6 +1,6 @@
 package tests;
 
-import Clients.OrderClient;
+import clients.OrderClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.Test;

@@ -5,20 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a8265441-5814-4c25-89b4-6c3b2b81aebb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojo/CourierLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojo/CourierRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pojo/OrderCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Clients/CourierClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Clients/OrderClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CreateCourierTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/CreateOrderTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/GetOrdersTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/LoginCourierTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tests/Specifications.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Clients/CourierClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/clients/CourierClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Clients/OrderClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/clients/OrderClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/CreateOrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/CreateOrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/GetOrdersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/GetOrdersTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/LoginCourierTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/tests/LoginCourierTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/tests/Specifications.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/clients/Specifications.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +44,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_directory_selection": "C:/Users/p.aleksandrov/Sprint_3/src/test/java",
-    "last_opened_file_path": "C:/Users/p.aleksandrov/Sprint_3/src/test/java"
+    "last_opened_file_path": "C:/Users/p.aleksandrov/Downloads/java_selenium_autotests-master"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -73,43 +67,12 @@
       <command value="mvn clean test" />
     </option>
   </component>
-  <component name="RunManager">
-    <configuration name="CreateCourierAPITest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sprint_3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.tests" />
-      <option name="MAIN_CLASS_NAME" value="org.example.tests.CreateCourierAPITest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CreateCourierAPITest.createNewCourierWithCorrectAndSufficientData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Sprint_3" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.example.tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.example.tests" />
-      <option name="MAIN_CLASS_NAME" value="org.example.tests.CreateCourierAPITest" />
-      <option name="METHOD_NAME" value="createNewCourierWithCorrectAndSufficientData" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CreateOrderTest">
     <configuration name="CreateCourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Sprint_3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="clients.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,12 +87,42 @@
       <module name="Sprint_3" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.*" />
+          <option name="PATTERN" value="clients.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="tests" />
       <option name="MAIN_CLASS_NAME" value="tests.CreateOrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GetOrdersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.GetOrdersTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="LoginCourierTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Sprint_3" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.LoginCourierTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -155,10 +148,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CreateOrderTest" />
+        <item itemvalue="JUnit.LoginCourierTest" />
         <item itemvalue="JUnit.CreateCourierTest" />
+        <item itemvalue="JUnit.GetOrdersTest" />
         <item itemvalue="TestNG.CreateCourierTests" />
-        <item itemvalue="JUnit.CreateCourierAPITest" />
-        <item itemvalue="JUnit.CreateCourierAPITest.createNewCourierWithCorrectAndSufficientData" />
       </list>
     </recent_temporary>
   </component>

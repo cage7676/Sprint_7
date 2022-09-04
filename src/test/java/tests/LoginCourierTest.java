@@ -1,32 +1,39 @@
 package tests;
 
-import Clients.CourierClient;
+import clients.CourierClient;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.example.pojo.CourierLogin;
 import org.example.pojo.CourierRegister;
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 
 public class LoginCourierTest {
 
+    CourierClient courierClient;
+    String courierId;
+
     CourierRegister courier = new CourierRegister("Paul767611>", "qwerty111999", "PaulAlex");
 
+    @After
+    public void tearDown(){
+        courierClient.deleteCourier(courierId);
+    }
 
     @Test
     @DisplayName("Логин, валидные данные")
     public void loginWithExistingCourier() {
-        Response createResponse = CourierClient.createNewCourier(courier);
+        CourierClient.createNewCourier(courier);
 
         CourierLogin courierLogin = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
         CourierClient.comparingSuccessfulLoginResponseCodeWithActual(logInResponse, 200);
 
-        String courierId = CourierClient.getCourierId(logInResponse);
+        courierId = CourierClient.getCourierId(logInResponse);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
     @Test
@@ -39,13 +46,12 @@ public class LoginCourierTest {
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
         CourierClient.comparingOfTheErroneousResponseCodeWithTheActualOne(logInResponse, 400, "Недостаточно данных для входа");
+
         CourierLogin courierLogin2 = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse2 = CourierClient.loginCourier(courierLogin2);
 
-        String courierId = CourierClient.getCourierId(logInResponse2);
+        courierId = CourierClient.getCourierId(logInResponse2);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
     @Test
@@ -58,13 +64,12 @@ public class LoginCourierTest {
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
         CourierClient.comparingOfTheErroneousResponseCodeWithTheActualOne(logInResponse, 400, "Недостаточно данных для входа");
+
         CourierLogin courierLogin2 = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse2 = CourierClient.loginCourier(courierLogin2);
 
-        String courierId = CourierClient.getCourierId(logInResponse2);
+        courierId = CourierClient.getCourierId(logInResponse2);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
     @Test
@@ -77,13 +82,12 @@ public class LoginCourierTest {
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
         CourierClient.comparingOfTheErroneousResponseCodeWithTheActualOne(logInResponse, 400, "Недостаточно данных для входа");
+
         CourierLogin courierLogin2 = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse2 = CourierClient.loginCourier(courierLogin2);
 
-        String courierId = CourierClient.getCourierId(logInResponse2);
+        courierId = CourierClient.getCourierId(logInResponse2);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
     @Test
@@ -96,13 +100,12 @@ public class LoginCourierTest {
         Response logInResponse = CourierClient.loginCourier(courierLogin);
 
         CourierClient.comparingOfTheErroneousResponseCodeWithTheActualOne(logInResponse, 404, "Учетная запись не найдена");
+
         CourierLogin courierLogin2 = new CourierLogin(this.courier.getLogin(), this.courier.getPassword());
         Response logInResponse2 = CourierClient.loginCourier(courierLogin2);
 
-        String courierId = CourierClient.getCourierId(logInResponse2);
+        courierId = CourierClient.getCourierId(logInResponse2);
 
-        Response deleteResponse = CourierClient.deleteCourier(courierId);
-        CourierClient.comparingTheActualResponseCodeWithTheSuccessfulOne(deleteResponse, "ok", 200);
     }
 
 }

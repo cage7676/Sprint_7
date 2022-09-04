@@ -1,11 +1,10 @@
-package Clients;
+package clients;
 
 import io.qameta.allure.Step;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import org.example.pojo.CourierLogin;
 import org.example.pojo.CourierRegister;
-import tests.Specifications;
 
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.equalTo;
